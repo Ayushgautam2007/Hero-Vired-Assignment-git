@@ -1,7 +1,7 @@
 # Hero-Vired-Assignment-git
 
 Step-by-Step Implementation  --- Task1
-🔹 1. Repository Setup
+## 1. Repository Setup
 cd /C/Users/nicsi/Desktop/Hero-Vired-Assignment-git
 git init
 
@@ -13,10 +13,10 @@ git branch -M main
 git remote add origin https://github.com/Ayushgautam2007/Hero-Vired-Assignment-git.git
 git push -u origin main
 
-🔹 2. Create Development Branch
+## 2. Create Development Branch
 git checkout -b dev
 
-🔹 3. Add Calculator Code
+## 3. Add Calculator Code
 touch calculator.py
 Add the following code:
 
@@ -54,13 +54,13 @@ if __name__ == "__main__":
     num3 = 25
     print(f"The square root of {num3} = {calculator.square_root(num3)}")
     
-🔹 4. Commit & Push to Dev Branch
+## 4. Commit & Push to Dev Branch
 
 git add .
 git commit -m "Added calculator with sqrt feature"
 git push origin dev
 
-🔹 5. Merge Dev → Main (Version 1 Release)
+## 5. Merge Dev → Main (Version 1 Release)
 
 git checkout main
 git pull origin main
@@ -69,7 +69,7 @@ git merge dev
 git tag v1.0
 git push origin main --tags
 
-🔹 6. Create Feature Branch
+## 6. Create Feature Branch
 
 git checkout dev
 git checkout -b feature/sqrt
@@ -78,7 +78,7 @@ git add .
 git commit -m "Working on sqrt feature"
 git push origin feature/sqrt
 
-🔹 7. Bug Fix in Dev Branch
+## 7. Bug Fix in Dev Branch
 
 git checkout dev
 
@@ -91,12 +91,12 @@ git add .
 git commit -m "Fixed division by zero bug"
 git push origin dev
 
-🔹 8. Update Feature Branch
+## 8. Update Feature Branch
 
 git checkout feature/sqrt
 git merge dev
 
-🔹 9. Create Pull Request
+## 9. Create Pull Request
 
 Go to GitHub repository
 
@@ -106,19 +106,19 @@ Base branch: main
 
 Compare branch: feature/sqrt
 
-🔹 10. Code Review & Changes
+## 10. Code Review & Changes
 
 git add .
 git commit -m "Updated after code review"
 git push origin feature/sqrt
 
-🔹 11. Merge Feature → Dev
+## 11. Merge Feature → Dev
 
 git checkout dev
 git merge feature/sqrt
 git push origin dev
 
-🔹 12. Final Merge & Version 2 Release
+## 12. Final Merge & Version 2 Release
 
 git checkout main
 git merge dev
@@ -133,5 +133,47 @@ Expected Output:
 16 + 4 = 20
 16 - 4 = 12
 16 * 4 = 64
+
+
+
+# Git LFS (Large File Storage) -- Task2
+
+## Step 1: Verify Git LFS Installation
+git lfs version
+
+## Step 2: Initialize Git LFS
+git lfs install
+
+## Step 3: Create and Switch to New Branch
+git checkout -b lfs
+
+## Step 4: Track Large Files Using Git LFS
+git lfs track "*.zip"
+
+Verify tracking:
+cat .gitattributes
+
+## Step 5: Create a Large File (>200MB)
+truncate -s 250M largefile.zip
+
+# Verify file:
+ls -lh
+
+## Step 6: Add Files to Staging
+git add .gitattributes
+git add largefile.zip
+
+## Step 7: Commit Changes
+git commit -m "Added large file using Git LFS"
+
+## Step 8: Push to Remote Repository
+git push origin lfs
+
+## Step 9: Verify File is Tracked by LFS
+git lfs ls-files
+
+
+
+
 16 / 4 = 4.0
 The square root of 25 = 5.0
