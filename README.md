@@ -9,9 +9,7 @@ git pull origin dev
 git checkout -b geometry-calculator
 
 ## Step 3: Add Initial Python File
- touch geometry_calculator.py
-
-Code:
+vim geometry_calculator.py
 
 import math
 
@@ -74,6 +72,7 @@ git stash apply stash@{0}
 length = 10
 width = 6
 print(f"Rectangle Area = {calculator.calculate_rectangle_area(length, width)}")
+
 ## Step 16: Commit Rectangle Feature
 git add .
 git commit -m "Completed rectangle area feature"
